@@ -1,6 +1,18 @@
 import streamlit as st
 import subprocess
 
+import os
+
+# Set the file permissions to allow execution
+os.chmod('./spotinfo', 0o755)
+
+# Now you can try to execute the file
+try:
+    subprocess.run('./spotinfo', shell=True)
+except Exception as e:
+    print(f"Error: {e}")
+
+
 def run_spotinfo(args):
     # Call the shell script and capture the output
     result = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
