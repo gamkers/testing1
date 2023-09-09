@@ -28,7 +28,7 @@ order = st.selectbox("Enter sort order", ["asc", "desc"], index=0)
 if st.button("Run spotinfo"):
     # Prepare the arguments for the shell script
     args = [
-        "./spotinfotool.sh","--type", instance_choice, "--os", os_choice, "--region", region,
+        "./spotinfo.sh","--type", instance_choice, "--os", os_choice, "--region", region,
         "--output", output, "--cpu", str(cpu), "--memory", str(memory),
         "--price", str(price), "--sort", sort, "--order", order
     ]
